@@ -2,6 +2,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Menu from './components/Menu';
+import Error from './pages/Error';
 
 function AppRoutes() {
   return (
@@ -10,7 +11,7 @@ function AppRoutes() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/sobremim' element={<About />} />
-        <Route path='*' element={<div>página não encontrada</div>} />
+        <Route path='*' element={<Error />} />
       </Routes>
     </BrowserRouter>
   );
