@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Navegacao = styled.nav`
@@ -17,14 +17,25 @@ const Navegacao = styled.nav`
 const Anchor = styled(Link)`
   font-size: 1.25rem;
   line-height: 1.5rem;
+  text-decoration: ${(props) => props.underline};
 `;
 
 const Menu = () => {
+  const { pathname } = useLocation();
+  const isMyPage = (path) => path === pathname;
+
   return (
     <header>
       <Navegacao>
-        <Anchor to='/'>Início</Anchor>
-        <Anchor to='/sobremim'>Sobre Mim</Anchor>
+        <Anchor to='/' underline={isMyPage('/') ? 'underline' : ''}>
+          Início
+        </Anchor>
+        <Anchor
+          to='/sobremim'
+          underline={isMyPage('/sobremim') ? 'underline' : ''}
+        >
+          Sobre Mim
+        </Anchor>
       </Navegacao>
     </header>
   );
