@@ -3,6 +3,7 @@ import About from './pages/About';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Menu from 'components/Menu';
 import Error from './pages/Error';
+import Footer from 'components/Footer';
 
 function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ function AppRoutes() {
         <Route path='/sobremim' element={<About />} />
         <Route path='*' element={<Error />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
