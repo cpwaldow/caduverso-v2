@@ -10,6 +10,7 @@ const PostList = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  margin-top: -2.5rem;
 
   @media (max-width: 1100px) {
     margin-top: 0;
