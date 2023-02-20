@@ -1,5 +1,4 @@
 import React from 'react';
-import Banner from 'components/Banner';
 import styled from 'styled-components';
 import posts from 'json/posts.json';
 import Post from 'components/Post';
@@ -25,7 +24,6 @@ const PostList = styled.ul`
 const Home = () => {
   return (
     <main>
-      <Banner />
       <PostList>
         {posts.map((post) => (
           <li key={post.id}>
