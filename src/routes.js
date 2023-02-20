@@ -12,8 +12,8 @@ function AppRoutes() {
       <Menu />
       <Routes>
         <Route path='/' element={<DefaultPage />}>
-          <Route path='/' element={<Home />} />
-          <Route path='/sobremim' element={<About />} />
+          <Route index element={<Home />} />
+          <Route path='sobremim' element={<About />} />
         </Route>
         <Route path='*' element={<Error />} />
       </Routes>
