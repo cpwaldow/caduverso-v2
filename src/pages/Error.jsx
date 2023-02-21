@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import erro404 from 'assets/erro_404.png';
+import DefaultBtn from 'components/DefaultBtn';
 
 const Container = styled.div`
   position: relative;
@@ -60,7 +61,7 @@ const Error = () => {
           inicial.
         </Paragrafo>
         <BotaoContainer>
-          <button>Voltar</button>
+          <DefaultBtn large={true}>Voltar</DefaultBtn>
         </BotaoContainer>
         <ImagemCachorro src={erro404} alt='Cachorro de óculos' />
       </Container>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import DefaultBtn from './DefaultBtn';
 
 const Container = styled.div`
   text-align: center;
@@ -35,28 +36,6 @@ const Titulo = styled.h2`
   }
 `;
 
-const BotaoLer = styled.button`
-  display: inline-block;
-  border-radius: 24px;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.125rem;
-  line-height: 1.125rem;
-  background-color: var(--azul-medio);
-  color: var(--branco);
-  border: 3px solid var(--azul-medio);
-  cursor: pointer;
-  transition: 0.2s;
-
-  &:hover {
-    border: 3px solid var(--azul-escuro);
-  }
-
-  @media (max-width: 1100px) {
-    padding: 0.6875rem 1.5rem;
-    font-size: 1.375rem;
-  }
-`;
-
 const PostCard = ({ post }) => {
   return (
     <Link to={`/posts/${post.id}`}>
@@ -66,7 +45,7 @@ const PostCard = ({ post }) => {
           alt='Imagem de capa do post'
         />
         <Titulo>{post.titulo}</Titulo>
-        <BotaoLer>Ler</BotaoLer>
+        <DefaultBtn>Ler</DefaultBtn>
       </Container>
     </Link>
   );
