@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import posts from 'json/posts.json';
-import Post from 'components/Post';
+import PostCard from 'components/PostCard';
 
 const PostList = styled.ul`
   padding: 0 6vw 3.625rem;
@@ -27,7 +27,7 @@ const Home = () => {
       <PostList>
         {posts.map((post) => (
           <li key={post.id}>
-            <Post post={post} />
+            <PostCard post={post} />
           </li>
         ))}
       </PostList>

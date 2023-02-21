@@ -56,7 +56,7 @@ const BotaoLer = styled.button`
   }
 `;
 
-const Post = ({ post }) => {
+const PostCard = ({ post }) => {
   return (
     <Container>
       <Capa
@@ -69,4 +69,4 @@ const Post = ({ post }) => {
   );
 };
 
-export default Post;
+export default PostCard;
