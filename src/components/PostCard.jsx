@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -58,14 +59,16 @@ const BotaoLer = styled.button`
 
 const PostCard = ({ post }) => {
   return (
-    <Container>
-      <Capa
-        src={`/assets/posts/capa${post.id}.png`}
-        alt='Imagem de capa do post'
-      />
-      <Titulo>{post.titulo}</Titulo>
-      <BotaoLer>Ler</BotaoLer>
-    </Container>
+    <Link to={`/posts/${post.id}`}>
+      <Container>
+        <Capa
+          src={`/assets/posts/capa${post.id}.png`}
+          alt='Imagem de capa do post'
+        />
+        <Titulo>{post.titulo}</Titulo>
+        <BotaoLer>Ler</BotaoLer>
+      </Container>
+    </Link>
   );
 };
 

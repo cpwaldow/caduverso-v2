@@ -5,6 +5,7 @@ import Menu from 'components/Menu';
 import Error from './pages/Error';
 import Footer from 'components/Footer';
 import DefaultPage from 'components/DefaultPage';
+import Post from 'pages/Post';
 
 function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ function AppRoutes() {
         <Route path='/' element={<DefaultPage />}>
           <Route index element={<Home />} />
           <Route path='sobremim' element={<About />} />
+          <Route path='posts/:id' element={<Post />} />
         </Route>
         <Route path='*' element={<Error />} />
       </Routes>
