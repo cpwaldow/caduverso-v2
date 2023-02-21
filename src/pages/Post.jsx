@@ -7,16 +7,15 @@ import PostMarkdownContainer from 'components/PostMarkdownContainer';
 
 const Post = () => {
   const parametros = useParams();
-  const { titulo, texto } = posts.find(
-    ({ id }) => id === Number(parametros.id),
-  );
+  const post = posts.find(({ id }) => id === Number(parametros.id));
+  if (!post) return <h1>Post não encontrado!</h1>;
   return (
     <PostModelo
       fotoCapa={`/assets/posts/capa${parametros.id}.png`}
-      titulo={titulo}
+      titulo={post.titulo}
     >
       <PostMarkdownContainer>
-        <ReactMarkdown>{texto}</ReactMarkdown>
+        <ReactMarkdown>{post.texto}</ReactMarkdown>
       </PostMarkdownContainer>
     </PostModelo>
   );
