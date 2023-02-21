@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import posts from 'json/posts.json';
 import PostModelo from 'components/PostModelo';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import PostMarkdownContainer from 'components/PostMarkdownContainer';
 
 const Post = () => {
   const parametros = useParams();
@@ -14,7 +15,9 @@ const Post = () => {
       fotoCapa={`/assets/posts/capa${parametros.id}.png`}
       titulo={titulo}
     >
-      <ReactMarkdown>{texto}</ReactMarkdown>
+      <PostMarkdownContainer>
+        <ReactMarkdown>{texto}</ReactMarkdown>
+      </PostMarkdownContainer>
     </PostModelo>
   );
 };
