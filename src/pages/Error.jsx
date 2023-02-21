@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import erro404 from 'assets/erro_404.png';
 import DefaultBtn from 'components/DefaultBtn';
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   position: relative;
@@ -48,6 +49,7 @@ const EspacoEmBranco = styled.div`
 `;
 
 const Error = () => {
+  const navegar = useNavigate();
   return (
     <section>
       <Container>
@@ -61,7 +63,9 @@ const Error = () => {
           inicial.
         </Paragrafo>
         <BotaoContainer>
-          <DefaultBtn large={true}>Voltar</DefaultBtn>
+          <DefaultBtn large={true} onClick={() => navegar(-1)}>
+            Voltar
+          </DefaultBtn>
         </BotaoContainer>
         <ImagemCachorro src={erro404} alt='Cachorro de óculos' />
       </Container>
